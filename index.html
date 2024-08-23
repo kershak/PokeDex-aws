@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="./index.js" ></script>
+    <script src="pokemon-detail.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <header class="header home">
+        <div class="container">
+          <div class="logo-wrapper">
+            <img src="./img/pokeball.svg" />
+            <h1>Pokedex</h1>
+          </div>
+          <div class="search-wrapper">
+            <div class="search-wrap">
+              <img
+                src="./img/search.svg"
+                alt="search icon"
+                class="search-icon"
+              />
+              <input
+                type="text"
+                class="search-input body3-fonts"
+                placeholder="Search"
+                id="search-input"
+              />
+              <img
+                src="./img/cross.svg"
+                alt="cross icon"
+                class="search-close-icon"
+                id="search-close-icon"
+              />
+            </div>
+            <div class="sort-wrapper">
+              <div class="sort-wrap">   
+                <img
+                  src="./img/sorting.svg"
+                  alt="sorting"
+                  class="sort-icon"
+                  id="sort-icon"
+                />
+              </div>
+              <div class="filter-wrapper">
+                <p class="body2-fonts">Sort by:</p>
+                <div class="filter-wrap">
+                  <div>
+                    <input
+                      type="radio"
+                      id="number"
+                      name="filters"
+                      value="number"
+                      checked
+                    />
+                    <label for="number" class="body3-fonts">Number</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="name" name="filters" value="name" />
+                    <label for="name" class="body3-fonts">Name</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </header> 
+      <div id="pokemon-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>    
+          <img class = "modal-img" id="modal-img" src="" alt="Pokemon Image">
+        </div>
+      </div>  
+      <section class="new-pokemon-form">
+        <h2>Add a New Pokemon</h2>
+          <form id="new-pokemon-form">
+            <label for="name">Name:</label>
+            <input type="text" id="newname" name="name" required><br><br>
+            <label for="height">Height (in meters):</label>
+            <input type="number" id="newheight" name="height" required><br><br>
+            <label for="weight">Weight (in kilograms):</label>
+            <input type="number" id="newweight" name="weight" required><br><br>
+            <button type="submit">Add Pokemon</button>
+          </form>
+      </section>
+      <section class="pokemon-list">
+        <div class="container">
+          <div class="list-container" id="list-container">  
+            <div class="number-wrap">
+              <p class="caption-fonts">#${pokemonID}</p>
+          </div>
+          <div class="img-wrap">
+              <img src="https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg" alt="${pokemon.name}" />
+          </div>
+          <div class="name-wrap">
+              <p class="body3-fonts">#${pokemon.name}</p>
+          </div>
+          </div>
+        </div>
+        <div id="not-found-message">Pokemon not found</div>
+      </section>
+    </main>
+  </body>
+</html>
